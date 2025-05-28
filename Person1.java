@@ -32,3 +32,28 @@ class Person {
         return LocalDate.parse(dob, formatter);
     }
 }
+class Employee extends Person {
+    private int empId;
+    private double salary;
+
+    public Employee(String name, int empId, double salary) {
+        super(name);
+        this.empId = empId;
+        this.salary = salary;
+    }
+
+    public void displayEmployeeDetails() {
+        displayPersonName();
+        System.out.println("Employee ID: " + empId);
+        System.out.printf("Salary: $%.2f%n", salary);
+    }
+}
+public class Person1 {
+    public static void main(String[] args) {
+        String name = "Vaishnavi";
+        String dob = "2005-05-04"; 
+        Employee emp = new Employee(name, 111, 55000.75);
+        emp.displayEmployeeDetails();
+        emp.displayAge(dob);
+    }
+}
